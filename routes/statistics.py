@@ -75,7 +75,7 @@ def get_statistic_data(data):
         lim_sup = (lim_inf + amplitud - float(variable_unit))
         frec = get_frecuency(data, lim_inf, lim_sup)
 
-        main_data.append([i + 1, lim_inf, lim_sup, frec])
+        main_data.append([i + 1, round(lim_inf,3), round(lim_sup,3), round(frec,3)])
         i += 1
 
     return main_data
@@ -95,9 +95,9 @@ def get_central_tendency(data: Data):
     data = get_statistic_data(original_data)
     tendency_data = tendencia_central(data)
     return {
-        "media": tendency_data[0],
-        "mediana": tendency_data[1],
-        "moda": tendency_data[2]
+        "media": round((tendency_data[0]),3),
+        "mediana": round((tendency_data[1]),3),
+        "moda": round((tendency_data[2]),3)
     }
 
 
@@ -106,9 +106,9 @@ def get_dispersion(data: Data):
     original_data = data.data
     dispersion_data = dispersion_measure(original_data)
     return {
-        "media": dispersion_data[0],
-        "varianza": dispersion_data[1],
-        "desviacion estandar": dispersion_data[2]}
+        "media": round(dispersion_data[0],3),
+        "varianza": round(dispersion_data[1],3),
+        "desviacion estandar": round(dispersion_data[2],3)}
 
 
 @statistics.post("/determination-coeficient")

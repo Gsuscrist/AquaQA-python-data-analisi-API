@@ -52,9 +52,9 @@ def tendencia_central(data):
                 frec_co = get_frec_complementaria(frec_co, x[3])
 
             i += 1
-            x.append(class_mark)
-            x.append(frec_ac)
-            x.append(frec_co)
+            x.append(round(class_mark,3))
+            x.append(round(frec_ac,3))
+            x.append(round(frec_co,3))
             full_data.append(x)
         return full_data
 
@@ -62,7 +62,7 @@ def tendencia_central(data):
         full_data = []
         for x in data:
             sup_ex = x[2] + (unit_variable / 2)
-            x.append(sup_ex)
+            x.append(round(sup_ex,3))
             full_data.append(x)
         return full_data
 
@@ -71,7 +71,7 @@ def tendencia_central(data):
         full_data = []
         for x in data:
             inf_ex = x[1] - (unit_variable / 2)
-            x.append(inf_ex)
+            x.append(round(inf_ex,3))
             full_data.append(x)
         return full_data
 
