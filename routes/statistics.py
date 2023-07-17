@@ -75,7 +75,7 @@ def get_statistic_data(data):
         lim_sup = (lim_inf + amplitud - float(variable_unit))
         frec = get_frecuency(data, lim_inf, lim_sup)
 
-        main_data.append([i + 1, round(lim_inf,3), round(lim_sup,3), round(frec,3)])
+        main_data.append([i + 1, round(lim_inf, 3), round(lim_sup, 3), round(frec, 3)])
         i += 1
 
     return main_data
@@ -95,9 +95,9 @@ def get_central_tendency(data: Data):
     data = get_statistic_data(original_data)
     tendency_data = tendencia_central(data)
     return {
-        "media": round((tendency_data[0]),3),
-        "mediana": round((tendency_data[1]),3),
-        "moda": round((tendency_data[2]),3)
+        "media": round((tendency_data[0]), 3),
+        "mediana": round((tendency_data[1]), 3),
+        "moda": round((tendency_data[2]), 3)
     }
 
 
@@ -106,9 +106,9 @@ def get_dispersion(data: Data):
     original_data = data.data
     dispersion_data = dispersion_measure(original_data)
     return {
-        "media": round(dispersion_data[0],3),
-        "varianza": round(dispersion_data[1],3),
-        "desviacionEstandar": round(dispersion_data[2],3)}
+        "media": round(dispersion_data[0], 3),
+        "varianza": round(dispersion_data[1], 3),
+        "desviacionEstandar": round(dispersion_data[2], 3)}
 
 
 @statistics.post("/determination-coeficient")
@@ -122,8 +122,9 @@ def get_relational_coeficient(data: Data2):
 
 
 @statistics.post("/cardinal-point")
-def get_cardinal_points(data:Data2):
-    return get_points(data.data01,data.data02)
+def get_cardinal_points(data: Data2):
+    return get_points(data.data01, data.data02)
+
 
 @statistics.post("/regretion-coeficient-x")
 def get_regretional_coeficient_x(data: Data3):
