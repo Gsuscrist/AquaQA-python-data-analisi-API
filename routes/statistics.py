@@ -108,7 +108,7 @@ def get_dispersion(data: Data):
     return {
         "media": round(dispersion_data[0],3),
         "varianza": round(dispersion_data[1],3),
-        "desviacion estandar": round(dispersion_data[2],3)}
+        "desviacionEstandar": round(dispersion_data[2],3)}
 
 
 @statistics.post("/determination-coeficient")
