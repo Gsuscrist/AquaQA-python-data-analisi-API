@@ -7,7 +7,7 @@ app = FastAPI()
 
 app.include_router(statistics)
 origins = ["http://localhost:8000", "http://aquaqa.sytes.net", "https://aquaqa.sytes.net", "http://localhost:5173",
-           "http://127.0.0.1:8000", "http://192.168.0.20:5173"]
+           "http://127.0.0.1:8000", "http://127.0.0.1:5173"]
 
 app.add_middleware(
     CORSMiddleware,
