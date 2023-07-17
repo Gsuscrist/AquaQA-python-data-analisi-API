@@ -5,7 +5,7 @@ from fastapi import APIRouter
 
 from controllers.centralTendencyMeasurement import tendencia_central
 from controllers.dispersionMesurement import dispersion_measure
-from controllers.linealRegression import start, get_coeficiente_regresion_l1, get_coeficiente_regresion_l2
+from controllers.linealRegression import start, get_coeficiente_regresion_l1, get_coeficiente_regresion_l2, get_points
 from models.Data2 import Data2
 from models.Data3 import Data3
 
@@ -120,6 +120,10 @@ def get_determination_coeficient(data: Data2):
 def get_relational_coeficient(data: Data2):
     return start(data.data01, data.data02)
 
+
+@statistics.post("/cardinal-point")
+def get_cardinal_points(data:Data2):
+    return get_points(data.data01,data.data02)
 
 @statistics.post("/regretion-coeficient-x")
 def get_regretional_coeficient_x(data: Data3):

@@ -167,3 +167,4 @@ def tendencia_central(data):
     moda = moda(data)
 
     return [media, mediana, moda]
+
