@@ -1,11 +1,10 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from routes.statistics import statistics
+from routes import statistics
 
 app = FastAPI()
 
-app.include_router(statistics)
 origins = ["https://aquaqa.sytes.net"]
 
 app.add_middleware(
@@ -17,6 +16,7 @@ app.add_middleware(
 )
 
 app.include_router(statistics)
+
 
 @app.get("/")
 async def root():
